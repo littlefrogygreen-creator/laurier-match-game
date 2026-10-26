@@ -193,11 +193,23 @@
     return () => { btn.disabled = false; msg.textContent = ''; form.classList.remove('done'); };
   }
 
+  /* Links to the other Laurier games on the home screen. */
+  const GAMES = [
+    { id: 'fly', name: '零感特薄飛飛挑戰', url: 'https://littlefrogygreen-creator.github.io/laurier-fly-game/' },
+    { id: 'match', name: '新舊包裝消消樂', url: 'https://littlefrogygreen-creator.github.io/laurier-match-game/' },
+    { id: 'stack', name: '新包裝層層疊', url: 'https://littlefrogygreen-creator.github.io/laurier-stack-game/' },
+  ];
+  function renderMoreGames(el, current) {
+    if (!el) return;
+    el.innerHTML = '更多遊戲：' + GAMES.filter((g) => g.id !== current)
+      .map((g) => '<a href="' + g.url + '">' + esc(g.name) + ' →</a>').join('　');
+  }
+
   function bindMute(btn) {
     const paint = () => { btn.textContent = Audio.muted ? '🔇' : '🎵'; btn.setAttribute('aria-label', Audio.muted ? '開聲' : '靜音'); };
     paint();
     btn.addEventListener('click', (e) => { e.stopPropagation(); Audio.unlock(); Audio.toggle(); Audio.start(); paint(); });
   }
 
-  window.Laurier = { Audio, LB, store, $, esc, renderBoard, loadBoard, bindSubmit, bindMute };
+  window.Laurier = { Audio, LB, store, $, esc, renderBoard, loadBoard, bindSubmit, bindMute, renderMoreGames };
 })();

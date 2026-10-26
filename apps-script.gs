@@ -12,8 +12,8 @@
  */
 
 var SHEET_NAME = 'Scores';
-var MAX_SCORE = { fly: 2000, match: 200000 }; // 超過呢個分數當作作弊，唔接受
-var GAMES = { fly: true, match: true };
+var MAX_SCORE = { fly: 2000, match: 200000, stack: 3000 }; // 超過呢個分數當作作弊，唔接受
+var GAMES = { fly: true, match: true, stack: true };
 
 function doGet(e) {
   var game = (e && e.parameter && e.parameter.game) || 'fly';

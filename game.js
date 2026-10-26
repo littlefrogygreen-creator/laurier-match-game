@@ -2,7 +2,6 @@
   'use strict';
   const { Audio, store, $, loadBoard, bindSubmit, bindMute, LB, renderBoard } = window.Laurier;
   const GAME = 'match';
-  const cfg = window.LAURIER_CONFIG || {};
   const COLS = 7, ROWS = 8, TYPES = 6, TIME = 60;
 
   const HEART = '<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 56S6 40 6 22C6 13 13 7 21 7c5 0 9 3 11 7 2-4 6-7 11-7 8 0 15 6 15 15 0 18-26 34-26 34z" fill="#ff7eb6" stroke="#fff" stroke-width="4"/><ellipse cx="20" cy="20" rx="6" ry="4" fill="#fff" opacity=".7" transform="rotate(-30 20 20)"/></svg>';
@@ -16,7 +15,7 @@
   let best = store.get('laurier_match_best', 0);
   let stats = { moves: 0, maxCombo: 0, newCleared: 0 };
 
-  if (cfg.otherGameUrl) $('#otherGame').href = cfg.otherGameUrl; else $('#otherGame').parentElement.hidden = true;
+  window.Laurier.renderMoreGames($('#moreGames'), GAME);
 
   const bubbles = $('.bubbles');
   for (let i = 0; i < 12; i++) {
