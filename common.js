@@ -197,7 +197,7 @@
   const GAMES = [
     { id: 'fly', name: '零感特薄飛飛挑戰', url: 'https://littlefrogygreen-creator.github.io/laurier-fly-game/' },
     { id: 'match', name: '新舊包裝消消樂', url: 'https://littlefrogygreen-creator.github.io/laurier-match-game/' },
-    { id: 'stack', name: '新包裝層層疊', url: 'https://littlefrogygreen-creator.github.io/laurier-stack-game/' },
+    { id: 'stack', name: '新包裝層層疊', url: 'https://littlefrogygreen-creator.github.io/laurier-fly-game/stack/' },
   ];
   function renderMoreGames(el, current) {
     if (!el) return;
