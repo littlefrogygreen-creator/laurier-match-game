@@ -1,3 +1,3 @@
 # Laurier LSSG – match
 
-手機網頁小遊戲（GitHub Pages）。排行榜設定見 `config.js` 同 `apps-script.gs`。
+消消樂已經搬去 `laurier-fly-game/match/`，呢度只保留自動轉址。
